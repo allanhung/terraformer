@@ -28,7 +28,7 @@ type VSwitchGenerator struct {
 func resourceFromVSwitchResponse(VSwitch vpc.VSwitch) terraform_utils.Resource {
 	return terraform_utils.NewResource(
 		VSwitch.VSwitchId, // id
-		VSwitch.VSwitchId+"__"+VSwitch.VSwitchName, // name
+		VSwitch.VSwitchName, // name
 		"alicloud_vswitch",
 		"alicloud",
 		map[string]string{},

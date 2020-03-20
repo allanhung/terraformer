@@ -29,7 +29,7 @@ type DnsGenerator struct {
 func resourceFromDomain(domain alidns.Domain) terraform_utils.Resource {
 	return terraform_utils.NewResource(
 		domain.DomainName,                      // id
-		domain.DomainId+"__"+domain.DomainName, // name
+		domain.DomainName, // name
 		"alicloud_dns",
 		"alicloud",
 		map[string]string{},

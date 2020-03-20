@@ -31,7 +31,7 @@ type SgGenerator struct {
 func resourceFromSecurityGroup(securitygroup ecs.SecurityGroup) terraform_utils.Resource {
 	return terraform_utils.NewResource(
 		securitygroup.SecurityGroupId,                                      // id
-		securitygroup.SecurityGroupId+"__"+securitygroup.SecurityGroupName, // name
+		securitygroup.SecurityGroupName, // name
 		"alicloud_security_group",
 		"alicloud",
 		map[string]string{},

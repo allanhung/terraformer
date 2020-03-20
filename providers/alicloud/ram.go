@@ -30,7 +30,7 @@ type RAMGenerator struct {
 func resourceFromRAMRole(role ram.Role) terraform_utils.Resource {
 	return terraform_utils.NewResource(
 		role.RoleName,                  // id
-		role.RoleId+"__"+role.RoleName, // name
+		role.RoleName, // name
 		"alicloud_ram_role",
 		"alicloud",
 		map[string]string{},

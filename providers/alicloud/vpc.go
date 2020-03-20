@@ -28,7 +28,7 @@ type VpcGenerator struct {
 func resourceFromVpcResponse(Vpc vpc.Vpc) terraform_utils.Resource {
 	return terraform_utils.NewResource(
 		Vpc.VpcId,                  // id
-		Vpc.VpcId+"__"+Vpc.VpcName, // name
+		Vpc.VpcName,                // name
 		"alicloud_vpc",
 		"alicloud",
 		map[string]string{},
