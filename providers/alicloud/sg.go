@@ -57,7 +57,7 @@ func resourceFromSecurityGroupAttribute(permission ecs.Permission, securityGroup
 
 	return terraform_utils.NewResource(
 		id, // id
-		id+"__"+securityGroup.SecurityGroupName, // name
+		securityGroup.SecurityGroupName, // name
 		"alicloud_security_group_rule",
 		"alicloud",
 		map[string]string{},

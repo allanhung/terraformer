@@ -45,7 +45,7 @@ func resourceFromRAMPolicy(policy ram.Policy, roleName string) terraform_utils.R
 
 	return terraform_utils.NewResource(
 		id, // id
-		id+"__"+roleName+"_"+policy.PolicyName, // name
+		roleName+"_"+policy.PolicyName, // name
 		"alicloud_ram_role_policy_attachment",
 		"alicloud",
 		map[string]string{},

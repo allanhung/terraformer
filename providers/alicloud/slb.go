@@ -44,7 +44,7 @@ func resourceFromSlbListener(loadBalancer slb.LoadBalancer, suffix string) terra
 func resourceFromSlbResponse(loadBalancer slb.LoadBalancer) terraform_utils.Resource {
 	return terraform_utils.NewResource(
 		loadBalancer.LoadBalancerId,                                    // id
-		loadBalancer.LoadBalancerId+"__"+loadBalancer.LoadBalancerName, // name
+		loadBalancer.LoadBalancerName, // name
 		"alicloud_slb",
 		"alicloud",
 		map[string]string{},

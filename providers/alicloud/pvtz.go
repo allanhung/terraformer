@@ -31,7 +31,7 @@ type PvtzGenerator struct {
 func resourceFromZoneResponse(zone pvtz.Zone) terraform_utils.Resource {
 	return terraform_utils.NewResource(
 		zone.ZoneId,                    // id
-		zone.ZoneId+"__"+zone.ZoneName, // name
+		zone.ZoneName, // name
 		"alicloud_pvtz_zone",
 		"alicloud",
 		map[string]string{},
@@ -43,7 +43,7 @@ func resourceFromZoneResponse(zone pvtz.Zone) terraform_utils.Resource {
 func resourceFromZoneAttachmentResponse(zone pvtz.Zone) terraform_utils.Resource {
 	return terraform_utils.NewResource(
 		zone.ZoneId, // id
-		zone.ZoneId+"__"+zone.ZoneName+"_attachment", // name
+		zone.ZoneName+"_attachment", // name
 		"alicloud_pvtz_zone_attachment",
 		"alicloud",
 		map[string]string{},
@@ -55,7 +55,7 @@ func resourceFromZoneAttachmentResponse(zone pvtz.Zone) terraform_utils.Resource
 func resourceFromZoneRecordResponse(record pvtz.Record, ZoneID string) terraform_utils.Resource {
 	return terraform_utils.NewResource(
 		strconv.Itoa(record.RecordId)+":"+ZoneID,     // id
-		strconv.Itoa(record.RecordId)+"__"+record.Rr, // name
+		strconv.Itoa(record.RecordId)+"_"+record.Rr, // name
 		"alicloud_pvtz_zone_record",
 		"alicloud",
 		map[string]string{},
